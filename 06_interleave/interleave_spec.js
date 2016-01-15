@@ -9,29 +9,34 @@ describe('interleave', function () {
 		expect(result).toEqual('aB');
 	});
 
-	it('interleaves two two-character strings, again preserving order', function () {
-		var result = interleave('ac', 'BD');
-		expect(result).toEqual('aBcD');
+	it('interleaves two strings of equal length', function () {
+		var result = interleave('hello', 'WORLD');
+		expect(result).toEqual('hWeOlRlLoD');
 	});
 
-	it('interleaves two longer strings of equal length', function () {
-		var result = interleave('abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-		expect(result).toEqual('aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ');
+	it('does not care about case', function () {
+		var result = interleave('HELLO', 'world');
+		expect(result).toEqual('HwEoLrLlOd');
 	});
 
 	it('if the first string is longer, it will add the remaining characters to the end', function () {
-		var result = interleave('abcdefg', 'ABC');
-		expect(result).toEqual('aAbBcCdefg');
+		var result = interleave('thisstringislonger', '123');
+		expect(result).toEqual('t1h2i3sstringislonger');
 	});
 
 	it('if the second string is longer, it will add the remaining characters to the end', function () {
-		var result = interleave('abc', 'ABCDEFG');
-		expect(result).toEqual('aAbBcCDEFG');
+		var result = interleave('AFEWLETTERS', 'astringwithmoreletters');
+		expect(result).toEqual('AaFsEtWrLiEnTgTwEiRtShmoreletters');
 	});
 
 	it('interleaves three strings', function () {
 		var result = interleave('abc', 'XYZ', '123');
 		expect(result).toEqual('aX1bY2cZ3');
+	});
+
+	it('interleaves three longer strings of equal length', function () {
+		var result = interleave('.......', 'helpful', '-------');
+		expect(result).toEqual('.h-.e-.l-.p-.f-.u-.l-');
 	});
 
 	it('interleaves n strings', function () {
