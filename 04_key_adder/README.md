@@ -1,10 +1,10 @@
 # Key Adder
 
-## Total Points: 6.00
+### Total Points: 6.00
 
-## Description:
+### Description:
 
-# Key Adder
+
 
 Create a Key Adder that loops over an Object's keys, finds(filters) all number values, and returns
 the sum of all the numbers.
