@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "testing functional and object-oriented javascript",
   "scripts": {
-    "test": "testem"
+    "test": "testem",
+    "grade": "testem"
   },
   "repository": {
     "type": "git",
