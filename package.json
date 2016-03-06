@@ -4,7 +4,7 @@
   "description": "testing functional and object-oriented javascript",
   "scripts": {
     "test": "testem",
-    "grade": "testem"
+    "grade": "node_modules/.bin/testem ci"
   },
   "repository": {
     "type": "git",
@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/FullstackAcademy/assessment-foundations/issues"
   },
-  "homepage": "https://github.com/FullstackAcademy/assessment-foundations#readme"
+  "homepage": "https://github.com/FullstackAcademy/assessment-foundations#readme",
+  "dependencies": {
+    "testem": "0.9.1"
+  }
 }
