@@ -9,6 +9,10 @@ describe('createFunction', function() {
     expect(Array.isArray(callbacks)).toEqual(true);    
   });
 
+  it('the resulting array is the same length as the given number', function() {
+     expect(callbacks.length).toEqual(10);
+  });
+
   it('all indexes in the array are functions', function(){ 
     // everything must be a function (hence the .every function)
     var onlyFuncs = callbacks.every(function(fn){
@@ -37,15 +41,16 @@ describe('createFunction', function() {
     
     var n = Math.floor(Math.random() * 20)+1;
     var randomCallbacks = createFunctions(n);
-    var properValues = randomCallbacks.every(function(fn,index){
-      return fn() === index;
-    });
-    var calledMoreThanOnce = randomCallbacks.every(function(fn,index){
-      return fn() === index;
-    });
+    
+    expect(Array.isArray(randomCallbacks)).toEqual(true);
+    expect(randomCallbacks.length).toEqual(n);
 
-    expect(properValues).toEqual(true);
-    expect(calledMoreThanOnce).toEqual(true);
+    randomCallbacks.forEach(function(fn,index){
+      expect(fn()).toEqual(index);
+    });
+    randomCallbacks.forEach(function(fn,index){
+      expect(fn()).toEqual(index);
+    });
   
   });
 
