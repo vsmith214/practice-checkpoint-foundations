@@ -4,18 +4,31 @@
 
 ## Description
 
-Create the function "interleave" that accepts two strings as arguments:
+Create the function `interleave` that accepts strings as arguments:
 
 ```
-interleave("1,3,5,7", "2,4,6,8");
+interleave("FOO", "bar");
 ```
 
-The task is to `interleave` the strings, using an in-place algorithm such that the resulting string (return value) looks like
+The task is to "interleave" the strings, such that the resulting string (return value) looks like:
 
 ```
-interleave("1,3,5,7", "2,4,6,8");
+interleave("FOO", "bar");
 
 // RETURNS:
-// "1,2,3,4,5,6,7,8"
+// "FbOaOr"
+```
 
+Also, `interleave` can accept any number of strings:
+
+```
+interleave("HHh", "Aaa", "!.?");
+
+// RETURNS:
+// "HA!Ha.ha?"
+
+interleave("987", "you", "ARE", "the", "246");
+
+// RETURNS:
+// "9yAt28oRh47uEe6"
 ```
