@@ -1,4 +1,4 @@
-# Foundations Assessment
+# Foundations Checkpoint
 
 Please read the instructions below carefully. We assume you still have Testem installed; if not, please run `npm install -g testem`.
 
@@ -15,11 +15,11 @@ Please read the instructions below carefully. We assume you still have Testem in
 
 ### Rules
 
-The assessment is similar to the Test First exercises — reverse engineer each spec, and write code to pass it. **Do not alter** any of the TestSpecs unless instructed to do so; ***all solutions should be written in the empty `.js` files in each folder***.
+This checkpoint is similar to the Test First exercises — reverse engineer each spec, and write code to pass it. **Do not alter** any of the TestSpecs unless instructed to do so; ***all solutions should be written in the empty `.js` files in each folder***.
 
 ### Scoring
 
-The assessment is scored out of **45 points**. In each suite, the later specs are usually more challenging / valuable. The suites are weighted as follows:
+This checkpoint is scored out of **45 points**. In each suite, the later specs are usually more challenging / valuable. The suites are weighted as follows:
 
 - 00_string_manipulation - 2.00 Points
 - 01_reduce_right - 6.00 Points (the recursion spec is worth 3.00 out of the 6.00)
