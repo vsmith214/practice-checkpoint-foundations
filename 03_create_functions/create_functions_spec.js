@@ -19,7 +19,7 @@ describe('createFunction', function() {
       if(typeof fn === 'function'){
         return true;
       } 
-    })
+    });
     expect(onlyFuncs).toEqual(true);
 
   });
@@ -31,7 +31,8 @@ describe('createFunction', function() {
     });
     var callFunctionsMoreThanOnce = callbacks.map(function(fn){
       return fn();
-    })
+    });
+
     expect(returnValsForEachFunc).toEqual([0,1,2,3,4,5,6,7,8,9]);
     expect(callFunctionsMoreThanOnce).toEqual([0,1,2,3,4,5,6,7,8,9]);
 
@@ -54,6 +55,19 @@ describe('createFunction', function() {
   
   });
 
+  it('createFunctions does not call Array.prototype methods', function(){
+    spyOn(Array.prototype, 'forEach').and.callThrough();
+    spyOn(Array.prototype, 'map').and.callThrough();
+
+    
+    createFunctions(5);
+
+    expect(Array.prototype.forEach.calls.any()).toEqual(false);
+    expect(Array.prototype.map.calls.any()).toEqual(false);
 
 
-})
+  });
+
+
+
+});

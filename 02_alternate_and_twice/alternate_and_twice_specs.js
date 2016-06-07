@@ -2,14 +2,14 @@ describe("alternate", function() {
   var message;
   beforeEach(function(){
      message = "";
-  })
+  });
 
   it("should return a function object", function(){
     var funcReturned = alternate(function(){
       message += "hey";
     });
-    expect(typeof funcReturned === "function").toEqual(true)
-  })
+    expect(typeof funcReturned === "function").toEqual(true);
+  });
 
   it("should add 'hey' to message on alternate function calls", function() {
     var sayHeyOnAlternateCalls = alternate(function() {
@@ -33,7 +33,7 @@ describe("twice", function() {
     var funcReturned = twice(function(){
       return "I'm happy I completed Foundations!";
     });
-    expect(typeof funcReturned === "function").toEqual(true)
+    expect(typeof funcReturned === "function").toEqual(true);
   });
 
 
@@ -77,7 +77,7 @@ describe("twice", function() {
         returnTen = twice(function(){
       return 10;
     }),
-        calledMoreThanTwoTimes;
+    calledMoreThanTwoTimes;
     
     total += returnTen();
     total += returnTen();
@@ -87,7 +87,24 @@ describe("twice", function() {
     
     expect(total).toEqual(20);    
     expect(calledMoreThanTwoTimes).toEqual(0);
-  })
+  });
 
+  it("works on functions that return a random number (instead of just 10) ", function(){
+    var randomNumber = Math.floor(Math.random()*1000)+1,
+        total = 0,
+        calledMoreThanTwoTimes;
 
+    var returnRandomNum = twice(function(){
+      return randomNumber;
+    });
+
+    total+=returnRandomNum();
+    total+=returnRandomNum();
+    total+=returnRandomNum();
+    total+=returnRandomNum();
+    calledMoreThanTwoTimes = returnRandomNum();
+
+    expect(total).toEqual(randomNumber*2);
+    expect(calledMoreThanTwoTimes).toEqual(0);
+  });
 });
