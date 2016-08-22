@@ -43,9 +43,20 @@ describe("secret-guest-list", function(){
     });
 
     it("functions in the `guestNameFunction` do not have additional property or methods attached(use closure)", function(){
-      var guestFunction = guestNameFunctions[2](secretCode);
+      var guestFunction = guestNameFunctions[2];
 
-      expect(Object.keys(guestFunction).length).toEqual(5);
+      expect(Object.keys(guestFunction).length).toEqual(0);
+    });
+    
+    it('guestListFns does not call Array.prototype methods', function(){
+      spyOn(Array.prototype, 'forEach').and.callThrough();
+      spyOn(Array.prototype, 'map').and.callThrough();
+
+      guestListFns(guestsArray, secretCode);
+
+      expect(Array.prototype.forEach.calls.any()).toEqual(false);
+      expect(Array.prototype.map.calls.any()).toEqual(false);
+
     });
 
   });
