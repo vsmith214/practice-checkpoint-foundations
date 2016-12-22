@@ -93,7 +93,7 @@ describe('extendWithObjectCreate', function(){
 
 });
 
-// EXTRA CREDIT - 3 Points
+// EXTRA CREDIT - 2 Points
 
 describe('extendWithNewKeyword', function(){
 

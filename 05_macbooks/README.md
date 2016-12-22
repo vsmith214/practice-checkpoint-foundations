@@ -1,6 +1,6 @@
 # Macbooks
 
-### Total Points: 6.00 - extendWithNewKeyword is Extra Credit (4 points)
+### Total Points: 6.00 - extendWithNewKeyword is Extra Credit (2 points)
 
 Laptops come in all different shapes, sizes, brands, names, etc! The initial task in this exercise is to create a Laptop Constructor Function that defines general properties and functions all Laptops have in common.  Then apply the general Laptop Constructor to create another type of Laptop, a Macbook.
 
