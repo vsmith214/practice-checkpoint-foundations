@@ -1,4 +1,7 @@
 describe('createFunction', function() {
+
+  //NOTE: YOU MAY NOT USE THE ES6 KEYWORD 'LET' IN THIS PROBLEM. FOR FULL CREDIT, YOU MUST COMPLETE THIS PROBLEM USING ONLY ES5
+  
   var callbacks;
 
   beforeEach(function(){

@@ -13,3 +13,5 @@ arrayOfFunctions[arrayOfFunctions.length - 1 ](); // must return 4
 ```
 
 Apply concepts such as Closure and Scope to this problem.  Please add comments if you struggle with the problem, this will help us assign partial credit!
+
+NOTE: YOU MAY NOT USE THE ES6 KEYWORD 'LET' IN THIS PROBLEM. FOR FULL CREDIT, YOU MUST COMPLETE THIS PROBLEM USING ONLY ES5
