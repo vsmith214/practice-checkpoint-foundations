@@ -6,8 +6,8 @@ Please read the instructions below carefully. We assume you still have Testem in
 
 1. **Important: Fork (not clone)** this repository to your own Github user account.
 * Clone your forked repo to your local machine.
-* `npm install`
-* Run `npm test` and load the URL displayed in your terminal.
+* Run `testem` to run the tests
+It's just like TestFirst!
 
 ---
 
