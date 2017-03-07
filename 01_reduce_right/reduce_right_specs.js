@@ -31,6 +31,20 @@ describe("reduceRight takes an array, starting point, and combining function and
     expect(arr).toEqual(copyOfOriginal);
   });
 
+  it('does not use Array.prototype.reduce or Array.prototype.reduceRight', function() {
+    spyOn(Array.prototype, 'reduce');
+    spyOn(Array.prototype, 'reduceRight');
+    var string_concat = function(prev,curr){
+      return prev+curr;
+    };
+    var reducedResult = reduceRight(['o','l','l','e','h'], '', string_concat)
+
+    expect(Array.prototype.reduce.calls.count()).toEqual(0);
+    expect(Array.prototype.reduceRight.calls.count()).toEqual(0);
+    
+    
+  })
+
 });
 
 
